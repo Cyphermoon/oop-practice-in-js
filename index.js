@@ -58,7 +58,7 @@ delete ballCircle.id
 //Enumerating properties in an object
 for (let key in ballCircle) {
     if (typeof ballCircle[key] === "function") continue
-    console.log(key);
+    // console.log(key);
 }
 
 let entries = Object.entries(ballCircle)
@@ -73,7 +73,3 @@ let testProp2 = ballCircle.hasOwnProperty("radius")
 let defaultLocation1 = ballCircle.defaultLocation
 
 ballCircle.defaultLocation = { x: 2, y: 5 }
-
-
-
-
