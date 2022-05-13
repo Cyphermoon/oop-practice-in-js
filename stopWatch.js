@@ -2,7 +2,7 @@ function StopWatch() {
     let stopWatchStarted = false
     let startTime, stopTime = null
 
-    this.duration = 0
+    let duration = 0
 
     this.start = function () {
         if (stopWatchStarted)
@@ -23,17 +23,23 @@ function StopWatch() {
 
         let seconds = (stopTime - startTime) / 1000
 
-        this.duration += seconds
+        duration += seconds
     }
 
     this.reset = function () {
-        this.duration = 0
+        duration = 0
         startTime, endTime = 0
         stopWatchStarted = false
     }
+
+    Object.defineProperty(this, "duration", {
+        get: () => duration
+    })
 }
 
 let sw = new StopWatch()
+
+console.log(sw.duration)
 
 
 
